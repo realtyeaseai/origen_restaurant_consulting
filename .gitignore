@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.oxide*
+
+# Hide submodule git folders from VS Code
+shared-types/.git
