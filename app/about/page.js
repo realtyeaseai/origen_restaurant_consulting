@@ -6,7 +6,7 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-4xl mx-auto py-16 px-6 bg-white">
+    <section className="max-w-5xl mx-auto py-16 px-6 bg-white">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-black">
         {t.about.heading}
       </h2>
@@ -19,11 +19,6 @@ export default function AboutPage() {
       </h3>
       <p className="mb-4 text-gray-700">{t.about.founderBio}</p>
       <p className="mb-4 text-gray-700">{t.about.missionParagraph}</p>
-
-      <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-black">
-        {t.about.messageHeading}
-      </h3>
-      <p className="italic text-gray-700">{t.about.messageText}</p>
     </section>
   );
 }

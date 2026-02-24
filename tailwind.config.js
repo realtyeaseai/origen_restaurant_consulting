@@ -5,7 +5,13 @@ module.exports = {
   darkMode: "media",
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        // map the google-font variables to the recognizable tailwind names
+        sans: ["var(--font-montserrat)", "ui-sans-serif", "system-ui"],
+        serif: ["var(--font-playfair)", "ui-serif", "Georgia"],
+      },
+    },
   },
   plugins: [],
 };
