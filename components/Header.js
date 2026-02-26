@@ -58,7 +58,7 @@ export default function Header() {
             </Link>
             <button
               onClick={openCalendly}
-              className="flex items-center h-10 rounded-full border border-black px-3 hover:bg-black/5 hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
+              className="flex items-center h-10 rounded-full border-2 border-black px-3 hover:bg-black/5 hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
             >
               Book Us
             </button>
@@ -67,7 +67,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleLang}
-              className="text-sm font-semibold px-2 py-1 border rounded"
+              className="text-sm font-semibold px-2 py-1 border-2 rounded"
               aria-label="toggle language"
             >
               {lang === "en" ? "ES" : "EN"}

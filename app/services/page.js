@@ -6,7 +6,7 @@ export default function ServicesPage() {
   const { t } = useTranslation();
 
   return (
-    <section className="max-w-5xl mx-auto py-16 px-6 bg-white">
+    <section className="max-w-5xl mx-auto py-12 px-6 bg-white">
       <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-black">
         {t.services.heading}
       </h2>

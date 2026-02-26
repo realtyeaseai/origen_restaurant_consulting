@@ -44,7 +44,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="max-w-2xl mx-auto py-16 px-6 bg-white text-black">
+    <section className="max-w-2xl mx-auto py-12 px-6 bg-white text-black">
       <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-black">
         {t.contact?.heading || "Contact Us"}
       </h2>

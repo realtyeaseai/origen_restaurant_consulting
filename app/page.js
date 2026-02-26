@@ -14,15 +14,15 @@ export default function Home() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center text-center pt-24 px-6 bg-white">
+    <section className="flex flex-col items-center justify-center text-center pt-12 px-6 bg-white">
       <div className="max-w-5xl">
-        <div className="mb-10 w-full flex flex-col items-center">
+        <div className="mb-10 w-full flex flex-col items-center rounded-lg p-6 bg-gray-50 shadow-md">
           <Image
             src="/assets/jen.jpg"
             alt="Jennypher - Founder"
-            width={200}
-            height={200}
-            className="rounded-full mb-4 object-cover"
+            width={250}
+            height={250}
+            className="rounded-full mb-4 object-cover border-2 border-[#ffc000] p-2"
           />
           <h3 className="text-2xl sm:text-4xl font-bold mb-3 text-black">
             {t.about.messageHeading}
