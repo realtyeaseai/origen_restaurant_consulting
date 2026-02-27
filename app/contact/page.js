@@ -44,7 +44,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="max-w-2xl mx-auto py-12 px-6 bg-white text-black">
+    <section className="max-w-3xl mx-auto py-12 px-6 bg-white text-black">
       <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-black">
         {t.contact?.heading || "Contact Us"}
       </h2>
@@ -126,13 +126,13 @@ export default function ContactPage() {
           <div className="border-t border-gray-200 pt-4">
             <p className="text-sm text-gray-700 mb-3">
               Do you Agree to receive text messages from{" "}
-              <strong>[Company Name]</strong> sent from{" "}
-              <strong>[Company Phone#]</strong>? Message frequency varies and
+              <strong>Origen Restaurant Consulting</strong> sent from{" "}
+              <strong>(888) 123-4567</strong> Message frequency varies and
               may include (Type of message content e.g. Appointment reminders,
               service or order information, promotional messages, etc.) Message
               and data rates may apply. Reply STOP at any time to end or
               unsubscribe. For assistance, reply HELP or contact support at
-              (8xx-xxx-xxxx)
+              (888) 123-4567
             </p>
 
             <div className="space-y-2">
@@ -144,8 +144,8 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className="w-4 h-4 mr-3 cursor-pointer"
                 />
-                Yes, I agree to receive text messages from [Business Name] sent
-                from (888-xxx-xxxx)
+                Yes, I agree to receive text messages from Origen Restaurant Consulting sent
+                from (888) 123-4567
               </label>
 
               <label className="flex items-center text-sm text-gray-800">
@@ -156,7 +156,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className="w-4 h-4 mr-3 cursor-pointer"
                 />
-                No, I do not want to receive text messages from [Business name]
+                No, I do not want to receive text messages from Origen Restaurant Consulting
               </label>
             </div>
           </div>

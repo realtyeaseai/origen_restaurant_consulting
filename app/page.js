@@ -3,14 +3,11 @@
 import { useTranslation } from "../context/LanguageContext";
 import Image from "next/image";
 
-// Calendly URL - update with your Calendly link
-const CALENDLY_URL = "https://calendly.com/origen-consulting";
-
 export default function Home() {
   const { t } = useTranslation();
 
   const openCalendly = () => {
-    window.open(CALENDLY_URL, "_blank");
+    window.open(process.env.NEXT_PUBLIC_CALENDLY_URL || "", "_blank");
   };
 
   return (

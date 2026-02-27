@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* Glacial Indifference – local files in public/fonts/ */
+@font-face {
+  font-family: "Glacial Indifference";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/GlacialIndifference-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Glacial Indifference";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/GlacialIndifference-Bold.otf") format("opentype");
+}
+
 /* default (light) variables */
 :root {
   --background: #ffffff; /* always light */
@@ -9,34 +26,33 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* the google/font variables will be injected by the layout component */
-  --font-sans: var(--font-montserrat);
-  --font-serif: var(--font-playfair);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Glacial Indifference", sans-serif;
+  --font-serif: var(--font-belleza), "Belleza", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
 }
 
+/* Force our fonts – in base layer so they override Tailwind’s defaults */
+@layer base {
+  html {
+    font-family: "Glacial Indifference", sans-serif;
+  }
+
+  body {
+    font-family: "Glacial Indifference", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-belleza), "Belleza", sans-serif;
+  }
+}
+
+/* body background/color (not font) */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family:
-    var(--font-sans),
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif;
-}
-
-/* use the elegant serif face for headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family:
-    var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
 }

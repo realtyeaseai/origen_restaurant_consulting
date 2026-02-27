@@ -5,19 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "../context/LanguageContext";
 
-// Calendly URL - update with your Calendly link
-const CALENDLY_URL = "https://calendly.com/origen-consulting";
-
 export default function Header() {
   const { t, toggleLang, lang } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openCalendly = () => {
-    window.open(CALENDLY_URL, "_blank");
+    window.open(process.env.NEXT_PUBLIC_CALENDLY_URL || "", "_blank");
   };
 
   return (
-    <header className="w-full bg-white/95 backdrop-blur sticky top-0 z-20 shadow-sm">
+    <header className="w-full bg-white/95 backdrop-blur sticky top-0 z-20 shadow-sm font-sans">
       <div className="w-full flex items-center justify-between p-4 text-black">
         <Link href="/" className="flex items-center space-x-4">
           <Image
@@ -27,11 +24,11 @@ export default function Header() {
             height={40}
             className="object-contain rounded-xl"
           />
-          <span className="text-2xl font-bold">{t.siteName}</span>
+          <span className="text-2xl font-bold font-serif">{t.siteName}</span>
         </Link>
 
         <div className="flex items-center space-x-6">
-          <nav className="hidden md:flex space-x-6 text-sm font-medium items-center">
+          <nav className="hidden md:flex space-x-6 text-sm font-medium items-center font-sans">
             <Link
               href="/"
               className="flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
@@ -67,7 +64,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleLang}
-              className="text-sm font-semibold px-2 py-1 border-2 rounded"
+              className="text-sm font-semibold px-2 py-1 border-2 rounded font-sans"
               aria-label="toggle language"
             >
               {lang === "en" ? "ES" : "EN"}
