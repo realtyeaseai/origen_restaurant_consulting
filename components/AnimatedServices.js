@@ -52,7 +52,7 @@ export default function AnimatedServices({ services }) {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
-      <div className="relative min-h-[320px] md:min-h-[360px]">
+      <div className="relative min-h-[360px] md:min-h-[400px]">
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={index}
@@ -61,15 +61,15 @@ export default function AnimatedServices({ services }) {
             initial="enter"
             animate="center"
             exit="exit"
-            className="absolute inset-0 flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-stretch"
+            className="absolute inset-0 flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-stretch border border-neutral-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm"
           >
             {/* Left: image or icon */}
-            <div className="flex-shrink-0 w-full md:w-2/5 max-w-sm md:max-w-none aspect-square md:aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100">
+            <div className="flex-shrink-0 w-full md:w-2/5 max-w-sm md:max-w-none aspect-square md:aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
               {(item.image ?? item.src) ? (
                 <img
                   src={item.image ?? item.src}
                   alt=""
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               ) : (
                 <div
@@ -82,7 +82,11 @@ export default function AnimatedServices({ services }) {
             </div>
 
             {/* Right: content */}
-            <div className="flex flex-col justify-center text-center md:text-left min-w-0 flex-1 min-h-[18rem] md:min-h-[22rem]">
+            <div className="flex flex-col justify-center text-center md:text-left min-w-0 flex-1 md:pl-6 md:relative">
+              <div
+                className="absolute left-0 top-4 bottom-4 hidden md:block w-px bg-neutral-200"
+                aria-hidden
+              />
               <cite className="not-italic font-semibold text-neutral-900 text-xl md:text-2xl block mb-2">
                 {item.title}
               </cite>
