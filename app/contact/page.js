@@ -176,7 +176,7 @@ export default function ContactPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[linear-gradient(180deg,#997300,#ffc000)] text-white font-bold py-3 rounded transition duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
+            className="w-full cursor-pointer hover:text-gray-800 bg-[linear-gradient(180deg,#997300,#ffc000)] text-white font-bold py-3 rounded transition duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
           >
             Submit
           </button>

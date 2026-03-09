@@ -24,38 +24,38 @@ export default function Header() {
             height={40}
             className="object-contain rounded-xl"
           />
-          <span className="text-2xl font-bold font-serif">{t.siteName}</span>
+          <span className="text-3xl font-bold font-serif">{t.siteName}</span>
         </Link>
 
         <div className="flex items-center space-x-6">
           <nav className="hidden md:flex space-x-6 text-sm font-medium items-center font-sans">
             <Link
               href="/"
-              className="flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               {t.nav.home}
             </Link>
             <Link
               href="/services"
-              className="flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               {t.nav.services}
             </Link>
             <Link
               href="/about"
-              className="flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className="flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               Contact Us
             </Link>
             <button
               onClick={openCalendly}
-              className="flex items-center h-10 rounded-full border-2 border-black px-3 hover:bg-black/5 hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
+              className="text-lg flex items-center h-10 rounded-full border-2 border-black px-3 hover:bg-black hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
             >
               Book Us
             </button>
@@ -64,7 +64,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleLang}
-              className="text-sm font-semibold px-2 py-1 border-2 rounded font-sans"
+              className="text-sm font-semibold px-2 py-1 border-2 rounded font-sans cursor-pointer"
               aria-label="toggle language"
             >
               {lang === "en" ? "ES" : "EN"}

@@ -108,7 +108,7 @@ export default function AnimatedServices({ services }) {
         <button
           type="button"
           onClick={goPrev}
-          className="p-2 rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+          className="p-2 cursor-pointer rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
           aria-label="Previous service"
         >
           <svg
@@ -145,7 +145,7 @@ export default function AnimatedServices({ services }) {
         <button
           type="button"
           onClick={goNext}
-          className="p-2 rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+          className="p-2 cursor-pointer rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
           aria-label="Next service"
         >
           <svg
