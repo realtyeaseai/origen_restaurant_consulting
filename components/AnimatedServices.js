@@ -96,7 +96,7 @@ export default function AnimatedServices({ services }) {
                 </p>
               )}
               <blockquote className="text-base sm:text-lg text-neutral-700 leading-relaxed max-h-[20rem] overflow-y-auto pr-2">
-                &ldquo;{item.description}&rdquo;
+                {item.description}
               </blockquote>
             </div>
           </motion.div>
