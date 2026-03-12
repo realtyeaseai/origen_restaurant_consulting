@@ -6,9 +6,9 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <section className="flex min-h-screen">
+    <section className="flex flex-col md:flex-row min-h-screen">
       {/* Left Side: About Origen */}
-      <div className="flex-1 bg-[linear-gradient(180deg,#997300,#ffc000)] text-white p-6 flex flex-col items-center justify-center text-center">
+      <div className="flex-1 min-h-[50vh] md:min-h-0 bg-[linear-gradient(180deg,#997300,#ffc000)] text-white p-6 flex flex-col items-center justify-center text-center">
         <img
           src="/assets/origen.png"
           alt="Origen"
@@ -23,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       {/* Right Side: Founder & Principal */}
-      <div className="flex-1 bg-white text-black p-6 flex flex-col items-center justify-center text-center">
+      <div className="flex-1 min-h-[50vh] md:min-h-0 bg-white text-black p-6 flex flex-col items-center justify-center text-center">
         <img
           src="/assets/jen1.png"
           alt="Founder"

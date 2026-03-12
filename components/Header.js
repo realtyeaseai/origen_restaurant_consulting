@@ -15,47 +15,47 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white/95 backdrop-blur sticky top-0 z-20 shadow-sm font-sans">
-      <div className="w-full flex items-center justify-between p-4 text-black">
-        <Link href="/" className="flex items-center space-x-4">
+      <div className="w-full flex items-center justify-between gap-4 p-4 text-black min-w-0">
+        <Link href="/" className="flex items-center gap-2 md:gap-4 min-w-0 shrink overflow-hidden">
           <Image
             src="/assets/origen.png"
             alt="Origen Restaurant Consulting logo"
             width={150}
             height={40}
-            className="object-contain rounded-xl"
+            className="object-contain rounded-xl shrink-0"
           />
-          <span className="text-3xl font-bold font-serif">{t.siteName}</span>
+          <span className="hidden md:inline text-2xl lg:text-3xl font-bold font-serif truncate" title={t.siteName}>{t.siteName}</span>
         </Link>
 
-        <div className="flex items-center space-x-6">
-          <nav className="hidden md:flex space-x-6 text-sm font-medium items-center font-sans">
+        <div className="flex items-center shrink-0 space-x-3 lg:space-x-6">
+          <nav className="hidden md:flex flex-nowrap items-center gap-4 lg:gap-6 text-sm font-medium font-sans">
             <Link
               href="/"
-              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-base lg:text-lg flex items-center h-10 whitespace-nowrap hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               {t.nav.home}
             </Link>
             <Link
               href="/services"
-              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-base lg:text-lg flex items-center h-10 whitespace-nowrap hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               {t.nav.services}
             </Link>
             <Link
               href="/about"
-              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-base lg:text-lg flex items-center h-10 whitespace-nowrap hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className="text-lg flex items-center h-10 hover:text-[#ffc000] dark:hover:text-[#ffc000]"
+              className="text-base lg:text-lg flex items-center h-10 whitespace-nowrap hover:text-[#ffc000] dark:hover:text-[#ffc000]"
             >
               Contact Us
             </Link>
             <button
               onClick={openCalendly}
-              className="text-lg flex items-center h-10 rounded-full border-2 border-black px-3 hover:bg-black hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
+              className="text-base lg:text-lg flex items-center justify-center min-h-10 h-10 rounded-full border-2 border-black px-4 py-2 whitespace-nowrap hover:bg-black hover:text-[#ffc000] hover:border-[#ffc000] dark:hover:text-[#ffc000] dark:hover:border-[#ffc000] cursor-pointer"
             >
               Book Us
             </button>

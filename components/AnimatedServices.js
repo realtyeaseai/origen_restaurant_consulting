@@ -51,8 +51,8 @@ export default function AnimatedServices({ services }) {
   if (!item) return null;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8">
-      <div className="relative min-h-[360px] md:min-h-[400px]">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
+      <div className="relative min-h-0 md:min-h-[400px]">
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={index}
@@ -61,10 +61,10 @@ export default function AnimatedServices({ services }) {
             initial="enter"
             animate="center"
             exit="exit"
-            className="absolute inset-0 flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-stretch border border-neutral-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm"
+            className="relative md:absolute md:inset-0 flex flex-col md:flex-row gap-4 md:gap-10 items-center md:items-stretch border border-neutral-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm overflow-visible md:overflow-hidden isolate"
           >
-            {/* Left: image or icon */}
-            <div className="flex-shrink-0 w-full md:w-2/5 max-w-sm md:max-w-none aspect-square md:aspect-[4/3] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+            {/* Left: image or icon - explicit stacking so it never renders behind card */}
+            <div className="shrink-0 relative z-10 w-full md:w-2/5 max-w-[200px] sm:max-w-sm md:max-w-none aspect-square md:aspect-4/3 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
               {(item.image ?? item.src) ? (
                 <img
                   src={item.image ?? item.src}
@@ -81,8 +81,8 @@ export default function AnimatedServices({ services }) {
               )}
             </div>
 
-            {/* Right: content */}
-            <div className="flex flex-col justify-center text-center md:text-left min-w-0 flex-1 md:pl-6 md:relative">
+            {/* Right: content - explicit stacking, scrollable description on small screens if needed */}
+            <div className="flex flex-col justify-center text-center md:text-left min-w-0 flex-1 md:pl-6 md:relative relative z-10">
               <div
                 className="absolute left-0 top-4 bottom-4 hidden md:block w-px bg-neutral-200"
                 aria-hidden
@@ -95,7 +95,7 @@ export default function AnimatedServices({ services }) {
                   {item.designation}
                 </p>
               )}
-              <blockquote className="text-base sm:text-lg text-neutral-700 leading-relaxed max-h-[20rem] overflow-y-auto pr-2">
+              <blockquote className="text-base sm:text-lg text-neutral-700 leading-relaxed md:max-h-80 md:overflow-y-auto overflow-x-hidden pr-2 flex-1 min-h-0">
                 {item.description}
               </blockquote>
             </div>
@@ -103,17 +103,16 @@ export default function AnimatedServices({ services }) {
         </AnimatePresence>
       </div>
 
-      {/* Dots + arrows */}
-      <div className="flex items-center justify-center gap-4 mt-8">
+      {/* Dots + arrows - larger touch targets on mobile */}
+      <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
         <button
           type="button"
           onClick={goPrev}
-          className="p-2 cursor-pointer rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 active:bg-neutral-100 transition-colors touch-manipulation"
           aria-label="Previous service"
         >
           <svg
-            width="20"
-            height="20"
+            className="w-6 h-6 sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -131,10 +130,10 @@ export default function AnimatedServices({ services }) {
               key={i}
               type="button"
               onClick={() => goTo(i)}
-              className={`h-2 rounded-full transition-all duration-200 ${
+              className={`h-2.5 sm:h-2 rounded-full transition-all duration-200 touch-manipulation min-w-[8px] ${
                 i === index
                   ? "w-8 bg-neutral-900"
-                  : "w-2 bg-neutral-300 hover:bg-neutral-400"
+                  : "w-2.5 sm:w-2 bg-neutral-300 hover:bg-neutral-400"
               }`}
               aria-label={`Go to service ${i + 1}`}
               aria-current={i === index ? "true" : undefined}
@@ -145,12 +144,11 @@ export default function AnimatedServices({ services }) {
         <button
           type="button"
           onClick={goNext}
-          className="p-2 cursor-pointer rounded-full border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 transition-colors"
+          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 active:bg-neutral-100 transition-colors touch-manipulation"
           aria-label="Next service"
         >
           <svg
-            width="20"
-            height="20"
+            className="w-6 h-6 sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
