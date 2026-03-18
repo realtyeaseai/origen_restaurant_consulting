@@ -24,10 +24,10 @@ const slideVariants = {
 };
 
 const iconBgClasses = [
-  "bg-amber-100 text-amber-800",
-  "bg-emerald-100 text-emerald-800",
-  "bg-sky-100 text-sky-800",
-  "bg-violet-100 text-violet-800",
+  "bg-[#5c6b4b]/15 text-[#5c6b4b]",
+  "bg-stone-200 text-stone-700",
+  "bg-stone-300 text-stone-800",
+  "bg-[#5c6b4b]/20 text-[#4a5840]",
 ];
 
 export default function AnimatedServices({ services }) {
@@ -61,10 +61,10 @@ export default function AnimatedServices({ services }) {
             initial="enter"
             animate="center"
             exit="exit"
-            className="relative md:absolute md:inset-0 flex flex-col md:flex-row gap-4 md:gap-10 items-center md:items-stretch border border-neutral-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm overflow-visible md:overflow-hidden isolate"
+            className="relative md:absolute md:inset-0 flex flex-col md:flex-row gap-4 md:gap-10 items-center md:items-stretch border border-stone-200 rounded-2xl p-4 md:p-6 bg-white shadow-sm overflow-visible md:overflow-hidden isolate"
           >
             {/* Left: image or icon - explicit stacking so it never renders behind card */}
-            <div className="shrink-0 relative z-10 w-full md:w-2/5 max-w-[200px] sm:max-w-sm md:max-w-none aspect-square md:aspect-4/3 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+            <div className="shrink-0 relative z-10 w-full md:w-2/5 max-w-[200px] sm:max-w-sm md:max-w-none aspect-square md:aspect-4/3 rounded-xl overflow-hidden bg-stone-100 border border-stone-200">
               {(item.image ?? item.src) ? (
                 <img
                   src={item.image ?? item.src}
@@ -84,18 +84,18 @@ export default function AnimatedServices({ services }) {
             {/* Right: content - explicit stacking, scrollable description on small screens if needed */}
             <div className="flex flex-col justify-center text-center md:text-left min-w-0 flex-1 md:pl-6 md:relative relative z-10">
               <div
-                className="absolute left-0 top-4 bottom-4 hidden md:block w-px bg-neutral-200"
+                className="absolute left-0 top-4 bottom-4 hidden md:block w-px bg-stone-200"
                 aria-hidden
               />
-              <cite className="not-italic font-semibold text-neutral-900 text-xl md:text-2xl block mb-2">
+              <cite className="not-italic font-semibold text-[#5c6b4b] text-xl md:text-2xl block mb-2">
                 {item.title}
               </cite>
               {item.designation && (
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-stone-500 mb-4">
                   {item.designation}
                 </p>
               )}
-              <blockquote className="text-base sm:text-lg text-neutral-700 leading-relaxed md:max-h-80 md:overflow-y-auto overflow-x-hidden pr-2 flex-1 min-h-0">
+              <blockquote className="text-base sm:text-lg text-stone-700 leading-relaxed md:max-h-80 md:overflow-y-auto overflow-x-hidden pr-2 flex-1 min-h-0">
                 {item.description}
               </blockquote>
             </div>
@@ -108,7 +108,7 @@ export default function AnimatedServices({ services }) {
         <button
           type="button"
           onClick={goPrev}
-          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 active:bg-neutral-100 transition-colors touch-manipulation"
+          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-stone-200 text-stone-600 hover:bg-stone-50 hover:border-[#5c6b4b] hover:text-[#5c6b4b] active:bg-stone-100 transition-colors touch-manipulation"
           aria-label="Previous service"
         >
           <svg
@@ -132,8 +132,8 @@ export default function AnimatedServices({ services }) {
               onClick={() => goTo(i)}
               className={`h-2.5 sm:h-2 rounded-full transition-all duration-200 touch-manipulation min-w-[8px] ${
                 i === index
-                  ? "w-8 bg-neutral-900"
-                  : "w-2.5 sm:w-2 bg-neutral-300 hover:bg-neutral-400"
+                  ? "w-8 bg-[#5c6b4b]"
+                  : "w-2.5 sm:w-2 bg-stone-300 hover:bg-stone-400"
               }`}
               aria-label={`Go to service ${i + 1}`}
               aria-current={i === index ? "true" : undefined}
@@ -144,7 +144,7 @@ export default function AnimatedServices({ services }) {
         <button
           type="button"
           onClick={goNext}
-          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:border-neutral-300 active:bg-neutral-100 transition-colors touch-manipulation"
+          className="p-3 sm:p-2 cursor-pointer rounded-full border-2 border-stone-200 text-stone-600 hover:bg-stone-50 hover:border-[#5c6b4b] hover:text-[#5c6b4b] active:bg-stone-100 transition-colors touch-manipulation"
           aria-label="Next service"
         >
           <svg

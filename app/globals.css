@@ -17,10 +17,12 @@
   src: url("/fonts/GlacialIndifference-Bold.otf") format("opentype");
 }
 
-/* default (light) variables */
+/* Light theme – Linden-style (natural, serene) */
 :root {
-  --background: #ffffff; /* always light */
+  --background: #ffffff;
   --foreground: #171717;
+  --accent: #5c6b4b; /* olive / moss green – primary CTA */
+  --accent-hover: #4a5840;
 }
 
 @theme inline {

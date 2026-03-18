@@ -38,14 +38,16 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="max-w-5xl mx-auto py-12 px-6 bg-white">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-center text-black">
-        {t.services.heading}
-      </h2>
-      <p className="text-center text-neutral-600 mb-10 max-w-xl mx-auto">
-        {t.services.landingCopy}
-      </p>
-      <AnimatedServices services={services} />
+    <section className="min-h-screen bg-stone-50 py-12 px-6">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-center text-[#5c6b4b]">
+          {t.services.heading}
+        </h2>
+        <p className="text-center text-stone-600 mb-10 max-w-xl mx-auto">
+          {t.services.landingCopy}
+        </p>
+        <AnimatedServices services={services} />
+      </div>
     </section>
   );
 }
