@@ -20,7 +20,7 @@ export default function Home() {
           aria-hidden
         /> */}
         <Image
-          src="/assets/hero2.png"
+          src="/assets/hero.png"
           alt=""
           fill
           className="object-cover"
