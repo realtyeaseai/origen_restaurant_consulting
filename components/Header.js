@@ -25,15 +25,15 @@ export default function Header() {
       <div className="w-full flex items-center justify-between gap-4 px-4 py-3 min-w-0">
         <Link href="/" className="flex items-center gap-2 shrink-0 overflow-hidden min-w-0">
           <Image
-            src="/assets/origen.png"
+            src="/assets/origen1.png"
             alt="Origen Restaurant Consulting logo"
-            width={140}
+            width={200}
             height={36}
-            className="object-contain shrink-0"
+            className="object-cover object-top rounded-xl"
           />
-          <span className="hidden lg:inline text-xl font-semibold text-stone-600 truncate uppercase tracking-wide" title={t.siteName}>
+          {/* <span className="hidden lg:inline text-xl font-semibold text-stone-600 truncate uppercase tracking-wide" title={t.siteName}>
             {t.siteName}
-          </span>
+          </span> */}
         </Link>
 
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8 lg:gap-10 text-sm font-medium">

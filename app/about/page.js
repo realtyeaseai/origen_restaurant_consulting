@@ -11,22 +11,22 @@ export default function AboutPage() {
       {/* Left: About Origen – theme-aligned dark panel */}
       <div className="flex-1 min-h-[50vh] md:min-h-0 bg-stone-700 text-white p-8 md:p-10 flex flex-col items-center justify-center text-center">
         <Image
-          src="/assets/origen.png"
+          src="/assets/origen1.png"
           alt="Origen"
           width={224}
           height={56}
-          className="mb-6 w-56 object-contain"
+          className="mb-6 w-56 object-cover object-top rounded-xl bg-white shadow-lg p-4"
         />
         <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-[#c4d4a8]">
           About Origen
         </h2>
-        <p className="mb-4 text-white/95 leading-relaxed max-w-lg mx-auto">
+        <p className="mb-4 text-white/95 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.businessDescription}
         </p>
-        <p className="mb-4 text-white/90 leading-relaxed max-w-lg mx-auto">
+        <p className="mb-4 text-white/90 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.specialization}
         </p>
-        <p className="mb-6 text-white/90 leading-relaxed max-w-lg mx-auto">
+        <p className="mb-6 text-white/90 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.philosophy}
         </p>
       </div>
@@ -41,12 +41,12 @@ export default function AboutPage() {
           className="mb-6 w-44 h-56 object-cover object-top rounded-xl ring-2 ring-stone-200 shadow-lg"
         />
         <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-[#5c6b4b]">
-          Founder & Principal – {t.about.founderName}
+          {t.about.founderHeading} – {t.about.founderName}
         </h3>
-        <p className="mb-4 text-stone-700 leading-relaxed max-w-lg mx-auto">
+        <p className="mb-4 text-stone-700 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.founderBio}
         </p>
-        <p className="mb-4 text-stone-700 leading-relaxed max-w-lg mx-auto">
+        <p className="mb-4 text-stone-700 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.missionParagraph}
         </p>
       </div>

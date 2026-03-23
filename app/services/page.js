@@ -38,8 +38,8 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="min-h-screen bg-stone-50 py-12 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section className="min-h-screen py-12 px-6">
+      <div className="max-w-5xl mx-auto bg-stone-50 p-8 md:p-10 rounded-xl border border-stone-200">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-center text-[#5c6b4b]">
           {t.services.heading}
         </h2>
