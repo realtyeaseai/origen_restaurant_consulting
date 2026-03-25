@@ -38,12 +38,12 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="min-h-screen py-12 px-6">
-      <div className="max-w-5xl mx-auto bg-stone-50 p-8 md:p-10 rounded-xl border border-stone-200">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-center text-[#5c6b4b]">
+    <section className="min-h-screen py-8 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto bg-stone-50 p-8 rounded-xl border border-stone-200">
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center text-stone-900">
           {t.services.heading}
         </h2>
-        <p className="text-center text-stone-600 mb-10 max-w-xl mx-auto">
+        <p className="text-center text-stone-600 mb-12 max-w-xl mx-auto leading-relaxed">
           {t.services.landingCopy}
         </p>
         <AnimatedServices services={services} />
