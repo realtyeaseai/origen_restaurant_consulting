@@ -12,18 +12,46 @@ export default function Header() {
   const pathname = usePathname();
 
   const openCalendly = () => {
-    window.open(process.env.NEXT_PUBLIC_CALENDLY_URL || "", "_blank");
+    const url =
+      process.env.NEXT_PUBLIC_CAL_URL ||
+      process.env.NEXT_PUBLIC_CALENDLY_URL ||
+      "";
+    if (!url) return;
+
+    const popupWidth = 980;
+    const popupHeight = 760;
+    const left = Math.max(
+      0,
+      Math.round((window.screen.width - popupWidth) / 2),
+    );
+    const top = Math.max(
+      0,
+      Math.round((window.screen.height - popupHeight) / 2),
+    );
+
+    const popup = window.open(
+      url,
+      "calendlyPopup",
+      `width=${popupWidth},height=${popupHeight},left=${left},top=${top},resizable=yes,scrollbars=yes`,
+    );
+
+    if (!popup) window.open(url, "_blank");
   };
 
   const navLinkClass = (path) =>
     `text-base lg:text-lg flex items-center h-10 whitespace-nowrap text-stone-600 hover:text-[#5c6b4b] transition-colors ${
-      pathname === path ? "underline underline-offset-4 decoration-2 decoration-[#5c6b4b]" : ""
+      pathname === path
+        ? "underline underline-offset-4 decoration-2 decoration-[#5c6b4b]"
+        : ""
     }`;
 
   return (
     <header className="w-full bg-stone-100/95 backdrop-blur sticky top-0 z-20 border-b border-stone-200 font-sans">
       <div className="w-full flex items-center justify-between gap-4 px-4 py-3 min-w-0">
-        <Link href="/" className="flex items-center gap-2 shrink-0 overflow-hidden min-w-0">
+        <Link
+          href="/"
+          className="flex items-center gap-2 shrink-0 overflow-hidden min-w-0"
+        >
           <Image
             src="/assets/origen1.png"
             alt="Origen Restaurant Consulting logo"
@@ -81,7 +109,9 @@ export default function Header() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -92,28 +122,47 @@ export default function Header() {
         <nav className="md:hidden bg-stone-50 border-t border-stone-200">
           <ul className="flex flex-col p-4 space-y-1 text-stone-700">
             <li>
-              <Link href="/" className="block py-2 hover:text-[#5c6b4b]" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/"
+                className="block py-2 hover:text-[#5c6b4b]"
+                onClick={() => setMenuOpen(false)}
+              >
                 {t.nav.home}
               </Link>
             </li>
             <li>
-              <Link href="/about" className="block py-2 hover:text-[#5c6b4b]" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/about"
+                className="block py-2 hover:text-[#5c6b4b]"
+                onClick={() => setMenuOpen(false)}
+              >
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/services" className="block py-2 hover:text-[#5c6b4b]" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/services"
+                className="block py-2 hover:text-[#5c6b4b]"
+                onClick={() => setMenuOpen(false)}
+              >
                 {t.nav.services}
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="block py-2 hover:text-[#5c6b4b]" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/contact"
+                className="block py-2 hover:text-[#5c6b4b]"
+                onClick={() => setMenuOpen(false)}
+              >
                 Contact Us
               </Link>
             </li>
             <li className="pt-2">
               <button
-                onClick={() => { setMenuOpen(false); openCalendly(); }}
+                onClick={() => {
+                  setMenuOpen(false);
+                  openCalendly();
+                }}
                 className="w-full text-left rounded-xl bg-[#5c6b4b] text-white font-medium px-4 py-2.5 hover:bg-[#4a5840] cursor-pointer"
               >
                 Book Us

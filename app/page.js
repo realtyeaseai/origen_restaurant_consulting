@@ -8,7 +8,22 @@ export default function Home() {
   const { t } = useTranslation();
 
   const openCalendly = () => {
-    window.open(process.env.NEXT_PUBLIC_CALENDLY_URL || "", "_blank");
+    const url =
+      process.env.NEXT_PUBLIC_CAL_URL || process.env.NEXT_PUBLIC_CALENDLY_URL || "";
+    if (!url) return;
+
+    const popupWidth = 980;
+    const popupHeight = 760;
+    const left = Math.max(0, Math.round((window.screen.width - popupWidth) / 2));
+    const top = Math.max(0, Math.round((window.screen.height - popupHeight) / 2));
+
+    const popup = window.open(
+      url,
+      "calendlyPopup",
+      `width=${popupWidth},height=${popupHeight},left=${left},top=${top},resizable=yes,scrollbars=yes`,
+    );
+
+    if (!popup) window.open(url, "_blank");
   };
 
   return (
