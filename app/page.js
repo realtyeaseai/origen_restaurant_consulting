@@ -8,7 +8,22 @@ export default function Home() {
   const { t } = useTranslation();
 
   const openCalendly = () => {
-    window.open(process.env.NEXT_PUBLIC_CALENDLY_URL || "", "_blank");
+    const url =
+      process.env.NEXT_PUBLIC_CAL_URL || process.env.NEXT_PUBLIC_CALENDLY_URL || "";
+    if (!url) return;
+
+    const popupWidth = 980;
+    const popupHeight = 760;
+    const left = Math.max(0, Math.round((window.screen.width - popupWidth) / 2));
+    const top = Math.max(0, Math.round((window.screen.height - popupHeight) / 2));
+
+    const popup = window.open(
+      url,
+      "calendlyPopup",
+      `width=${popupWidth},height=${popupHeight},left=${left},top=${top},resizable=yes,scrollbars=yes`,
+    );
+
+    if (!popup) window.open(url, "_blank");
   };
 
   return (
@@ -38,7 +53,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={openCalendly}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#5c6b4b] text-white font-medium px-8 py-3.5 rounded-xl hover:bg-[#4a5840] transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#EFBF04] text-white font-medium px-8 py-3.5 rounded-xl hover:bg-[#FFA800] transition-colors cursor-pointer"
             >
               {t.nav.contact}
             </button>
@@ -62,7 +77,7 @@ export default function Home() {
             height={220}
             className="rounded-full mb-6 object-cover ring-2 ring-stone-300 shadow-lg"
           />
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-[#5c6b4b]">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-[#EFBF04]">
             {t.about.messageHeading}
           </h2>
           <p className="italic text-lg sm:text-xl text-stone-700 max-w-3xl mx-auto leading-relaxed">
