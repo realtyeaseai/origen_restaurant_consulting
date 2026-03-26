@@ -57,7 +57,7 @@ export default function ContactPage() {
 
       <div className="relative z-10 max-w-8xl mx-auto flex justify-center md:justify-end">
         <div className="w-full max-w-2xl bg-stone-50/92 backdrop-blur-md border border-stone-200 rounded-2xl p-7 sm:p-8 md:p-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-[#5c6b4b]">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-[#EFBF04]">
             {t.contact?.heading || "Contact Us"}
           </h2>
           <p className="text-stone-600 mb-8">
@@ -65,8 +65,8 @@ export default function ContactPage() {
           </p>
 
           {submitted ? (
-            <div className="text-center py-12 bg-[#5c6b4b]/10 rounded-2xl border border-[#5c6b4b]/30">
-              <p className="text-[#5c6b4b] text-lg font-semibold">
+            <div className="text-center py-12 bg-[#EFBF04]/10 rounded-2xl border border-[#EFBF04]/30">
+              <p className="text-[#EFBF04] text-lg font-semibold">
                 Thank you! Your message has been sent successfully.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5c6b4b] focus:border-[#5c6b4b] bg-white text-stone-900 placeholder:text-stone-400"
+                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400"
                   placeholder="Your name"
                 />
               </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5c6b4b] focus:border-[#5c6b4b] bg-white text-stone-900 placeholder:text-stone-400"
+                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400"
                   placeholder="your@email.com"
                 />
               </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5c6b4b] focus:border-[#5c6b4b] bg-white text-stone-900 placeholder:text-stone-400"
+                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400"
                   placeholder="(123) 456-7890"
                 />
               </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="6"
-                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5c6b4b] focus:border-[#5c6b4b] bg-white text-stone-900 placeholder:text-stone-400 resize-y"
+                  className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400 resize-y"
                   placeholder="Your message here..."
                 />
               </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                       name="agreeToTexts"
                       checked={formData.agreeToTexts}
                       onChange={handleChange}
-                      className="w-4 h-4 mr-3 rounded border-stone-300 text-[#5c6b4b] focus:ring-[#5c6b4b] cursor-pointer"
+                      className="w-4 h-4 mr-3 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
                     />
                     Yes, I agree to receive text messages from Origen Restaurant Consulting sent
                     from (888) 123-4567
@@ -161,7 +161,7 @@ export default function ContactPage() {
                       name="declineTexts"
                       checked={formData.declineTexts}
                       onChange={handleChange}
-                      className="w-4 h-4 mr-3 rounded border-stone-300 text-[#5c6b4b] focus:ring-[#5c6b4b] cursor-pointer"
+                      className="w-4 h-4 mr-3 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
                     />
                     No, I do not want to receive text messages from Origen Restaurant Consulting
                   </label>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                 See our{" "}
                 <Link
                   href="/privacy"
-                  className="text-[#5c6b4b] hover:underline font-semibold"
+                  className="text-[#EFBF04] hover:underline font-semibold"
                 >
                   Privacy Policy
                 </Link>{" "}
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full cursor-pointer bg-[#5c6b4b] text-white font-semibold py-3.5 rounded-xl hover:bg-[#4a5840] transition-colors focus:outline-none focus:ring-2 focus:ring-[#5c6b4b] focus:ring-offset-2"
+                className="w-full cursor-pointer bg-[#EFBF04] text-white font-semibold py-3.5 rounded-xl hover:bg-[#FFA800] transition-colors focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:ring-offset-2"
               >
                 Submit
               </button>

@@ -46,7 +46,8 @@ export default function Header() {
     }`;
 
   return (
-    <header className="w-full bg-stone-100/95 backdrop-blur sticky top-0 z-20 border-b border-stone-200 font-sans">
+    // <header className="w-full bg-stone-100/95 backdrop-blur sticky top-0 z-20 border-b border-stone-200 font-sans">
+    <header className="w-full sticky top-0 z-20 border-b border-white/25 bg-white/15 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.35)_inset] supports-backdrop-filter:bg-white/10 font-sans">
       <div className="w-full flex items-center justify-between gap-4 px-4 py-3 min-w-0">
         <Link
           href="/"
@@ -63,7 +64,7 @@ export default function Header() {
             {t.siteName}
           </span> */}
         </Link>
-
+        {/* nav links #EFBF04. and use #FFA800 for hover effect. and use text-stone-600 for the text color.*/}
         <nav className="hidden md:flex flex-1 justify-center items-center gap-8 lg:gap-10 text-sm font-medium">
           <Link href="/" className={navLinkClass("/")}>
             {t.nav.home}
@@ -78,17 +79,17 @@ export default function Header() {
             Contact Us
           </Link>
         </nav>
-
+        {/* book us button #EFBF04. and use #FFA800 for hover effect. and use text-white for the text color.*/}
         <div className="flex items-center shrink-0 gap-3">
           <button
             onClick={openCalendly}
-            className="hidden md:inline-flex items-center justify-center min-h-10 h-10 rounded-xl bg-[#5c6b4b] text-white font-medium px-5 hover:bg-[#4a5840] transition-colors cursor-pointer"
+            className="hidden md:inline-flex items-center justify-center min-h-10 h-10 rounded-xl bg-[#EFBF04] text-white font-medium px-5 hover:bg-[#FFA800] transition-colors cursor-pointer"
           >
             Book Us
           </button>
           <button
             onClick={toggleLang}
-            className="text-sm font-medium px-2.5 py-1.5 rounded border border-stone-400 text-stone-600 hover:border-[#5c6b4b] hover:text-[#5c6b4b] cursor-pointer transition-colors"
+            className="text-sm font-medium px-2.5 py-1.5 rounded border border-[#EFBF04] text-[#EFBF04] hover:border-[#FFA800] hover:text-[#FFA800] cursor-pointer transition-colors"
             aria-label="toggle language"
           >
             {lang === "en" ? "ES" : "EN"}
