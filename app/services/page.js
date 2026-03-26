@@ -38,9 +38,9 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="min-h-screen py-8 px-4 sm:px-6">
+    <section className="min-h-screen py-8 px-4 sm:px-6 bg-stone-300">
       <div className="max-w-6xl mx-auto bg-stone-50 p-8 rounded-xl border border-stone-200">
-        <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center text-stone-900">
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center text-amber-500">
           {t.services.heading}
         </h2>
         <p className="text-center text-stone-600 mb-12 max-w-xl mx-auto leading-relaxed">

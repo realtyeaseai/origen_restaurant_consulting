@@ -39,9 +39,9 @@ export default function Header() {
   };
 
   const navLinkClass = (path) =>
-    `text-base lg:text-lg flex items-center h-10 whitespace-nowrap text-stone-600 hover:text-[#5c6b4b] transition-colors ${
+    `text-base lg:text-lg flex items-center h-10 whitespace-nowrap text-[#FFA800] hover:text-amber-600 transition-colors ${
       pathname === path
-        ? "underline underline-offset-4 decoration-2 decoration-[#5c6b4b]"
+        ? "underline underline-offset-4 decoration-2 decoration-[#FFA800]"
         : ""
     }`;
 
@@ -83,13 +83,13 @@ export default function Header() {
         <div className="flex items-center shrink-0 gap-3">
           <button
             onClick={openCalendly}
-            className="hidden md:inline-flex items-center justify-center min-h-10 h-10 rounded-xl bg-[#EFBF04] text-white font-medium px-5 hover:bg-[#FFA800] transition-colors cursor-pointer"
+            className="hidden md:inline-flex items-center justify-center min-h-10 h-10 rounded-xl bg-[#FFA800] text-white text-md font-medium px-5 hover:bg-amber-600 transition-colors cursor-pointer"
           >
             Book Us
           </button>
           <button
             onClick={toggleLang}
-            className="text-sm font-medium px-2.5 py-1.5 rounded border border-[#EFBF04] text-[#EFBF04] hover:border-[#FFA800] hover:text-[#FFA800] cursor-pointer transition-colors"
+            className="text-sm font-medium px-2.5 py-1.5 rounded border border-[#FFA800] text-[#FFA800] hover:border-amber-600 hover:text-amber-600 cursor-pointer transition-colors"
             aria-label="toggle language"
           >
             {lang === "en" ? "ES" : "EN"}
@@ -125,7 +125,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="block py-2 hover:text-[#5c6b4b]"
+                className="block py-2 hover:text-[#FFA800]"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.home}
@@ -134,7 +134,7 @@ export default function Header() {
             <li>
               <Link
                 href="/about"
-                className="block py-2 hover:text-[#5c6b4b]"
+                className="block py-2 hover:text-[#FFA800]"
                 onClick={() => setMenuOpen(false)}
               >
                 About Us
@@ -143,7 +143,7 @@ export default function Header() {
             <li>
               <Link
                 href="/services"
-                className="block py-2 hover:text-[#5c6b4b]"
+                className="block py-2 hover:text-[#FFA800]"
                 onClick={() => setMenuOpen(false)}
               >
                 {t.nav.services}
@@ -152,7 +152,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="block py-2 hover:text-[#5c6b4b]"
+                className="block py-2 hover:text-[#FFA800]"
                 onClick={() => setMenuOpen(false)}
               >
                 Contact Us
@@ -164,7 +164,7 @@ export default function Header() {
                   setMenuOpen(false);
                   openCalendly();
                 }}
-                className="w-full text-left rounded-xl bg-[#5c6b4b] text-white font-medium px-4 py-2.5 hover:bg-[#4a5840] cursor-pointer"
+                className="w-full text-left rounded-xl bg-[#EFBF04] text-white font-medium px-4 py-2.5 hover:bg-[#FFA800] cursor-pointer"
               >
                 Book Us
               </button>

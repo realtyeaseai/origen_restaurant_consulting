@@ -53,7 +53,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={openCalendly}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#EFBF04] text-white font-medium px-8 py-3.5 rounded-xl hover:bg-[#FFA800] transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#FFA800] text-white font-medium text-md px-8 py-3.5 rounded-xl hover:bg-amber-600 transition-colors cursor-pointer"
             >
               {t.nav.contact}
             </button>
