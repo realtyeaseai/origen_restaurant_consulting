@@ -7,16 +7,27 @@ import Image from "next/image";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const serviceOptions = [
+    t.services.oath.title,
+    t.services.audit.title,
+    t.services.improvement.title,
+    t.services.assurance.title,
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
     agreeToTexts: false,
-    declineTexts: false,
+    selectedServices: [],
+    serviceOther: false,
+    serviceOtherText: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,21 +37,67 @@ export default function ContactPage() {
     }));
   };
 
+  const handleServiceToggle = (serviceName) => {
+    setFormData((prev) => {
+      const exists = prev.selectedServices.includes(serviceName);
+      return {
+        ...prev,
+        selectedServices: exists
+          ? prev.selectedServices.filter((s) => s !== serviceName)
+          : [...prev.selectedServices, serviceName],
+      };
+    });
+  };
+
+  const handleOtherToggle = (checked) => {
+    setFormData((prev) => ({
+      ...prev,
+      serviceOther: checked,
+      serviceOtherText: checked ? prev.serviceOtherText : "",
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
+
+    try {
+      setSubmitting(true);
+      setSubmitError("");
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          serviceOtherText: formData.serviceOther ? formData.serviceOtherText : "",
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data?.error || "Unable to submit the form.");
+      }
+
+      setSubmitted(true);
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: "",
         agreeToTexts: false,
-        declineTexts: false,
+        selectedServices: [],
+        serviceOther: false,
+        serviceOtherText: "",
       });
-      setSubmitted(false);
-    }, 2000);
+    } catch (error) {
+      setSubmitError(
+        error?.message || "Something went wrong while sending your message.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -72,6 +129,11 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {submitError && (
+                <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {submitError}
+                </div>
+              )}
               <div>
                 <label className="block text-sm font-semibold mb-2 text-stone-700">
                   Name:
@@ -116,6 +178,49 @@ export default function ContactPage() {
                 />
               </div>
 
+              <div className="border-t border-stone-200 pt-5">
+                <label className="block text-sm font-semibold mb-3 text-stone-700">
+                  Services interested in:
+                </label>
+                <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+                  {serviceOptions.map((serviceName) => (
+                    <label
+                      key={serviceName}
+                      className="flex items-start gap-2 text-sm text-stone-700 cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.selectedServices.includes(serviceName)}
+                        onChange={() => handleServiceToggle(serviceName)}
+                        className="mt-0.5 w-4 h-4 shrink-0 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
+                      />
+                      <span className="leading-snug">{serviceName}</span>
+                    </label>
+                  ))}
+
+                  <label className="flex items-center gap-2 text-sm text-stone-700 cursor-pointer col-span-2">
+                    <input
+                      type="checkbox"
+                      checked={formData.serviceOther}
+                      onChange={(e) => handleOtherToggle(e.target.checked)}
+                      className="w-4 h-4 shrink-0 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
+                    />
+                    Other
+                  </label>
+                </div>
+
+                {formData.serviceOther && (
+                  <input
+                    type="text"
+                    name="serviceOtherText"
+                    value={formData.serviceOtherText}
+                    onChange={handleChange}
+                    placeholder="Please specify other service"
+                    className="mt-3 w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400"
+                  />
+                )}
+              </div>
+
               <div>
                 <label className="block text-sm font-semibold mb-2 text-stone-700">
                   Message:
@@ -124,7 +229,7 @@ export default function ContactPage() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="6"
+                  rows="2"
                   className="w-full border border-stone-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:border-[#EFBF04] bg-white text-stone-900 placeholder:text-stone-400 resize-y"
                   placeholder="Your message here..."
                 />
@@ -154,17 +259,6 @@ export default function ContactPage() {
                     Yes, I agree to receive text messages from Origen Restaurant Consulting sent
                     from +1 (917) 544-4218
                   </label>
-
-                  <label className="flex items-center text-sm text-stone-700 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="declineTexts"
-                      checked={formData.declineTexts}
-                      onChange={handleChange}
-                      className="w-4 h-4 mr-3 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
-                    />
-                    No, I do not want to receive text messages from Origen Restaurant Consulting
-                  </label>
                 </div>
               </div>
 
@@ -181,9 +275,10 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full cursor-pointer bg-[#EFBF04] text-white font-semibold py-3.5 rounded-xl hover:bg-[#FFA800] transition-colors focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:ring-offset-2"
+                disabled={submitting}
+                className="w-full cursor-pointer bg-[#EFBF04] text-white font-semibold py-3.5 rounded-xl hover:bg-[#FFA800] disabled:opacity-70 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-[#EFBF04] focus:ring-offset-2"
               >
-                Submit
+                {submitting ? "Sending..." : "Submit"}
               </button>
             </form>
           )}
