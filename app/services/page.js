@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import Image from "next/image";
 import { useTranslation } from "../../context/LanguageContext";
 import AnimatedServices from "../../components/AnimatedServices";
 
@@ -38,8 +39,18 @@ export default function ServicesPage() {
   );
 
   return (
-    <section className="min-h-screen py-8 px-4 sm:px-6 bg-stone-300">
-      <div className="max-w-6xl mx-auto bg-stone-50 p-8 rounded-xl border border-stone-200">
+    <section className="relative min-h-screen py-8 px-4 sm:px-6 overflow-hidden">
+      <Image
+        src="/assets/services.PNG"
+        alt="Services background"
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+        priority
+      />
+      <div className="absolute inset-0 bg-black/30" aria-hidden />
+
+      <div className="relative z-10 max-w-6xl mx-auto bg-stone-50/95 p-8 rounded-xl border border-stone-200 backdrop-blur-xs">
         <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-4 text-center text-amber-500">
           {t.services.heading}
         </h2>

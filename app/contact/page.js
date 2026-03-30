@@ -134,12 +134,12 @@ export default function ContactPage() {
                 <p className="text-sm text-stone-600 mb-3">
                   Do you Agree to receive text messages from{" "}
                   <strong>Origen Restaurant Consulting</strong> sent from{" "}
-                  <strong>(888) 123-4567</strong> Message frequency varies and
+                  <strong>+1 (917) 544-4218</strong> Message frequency varies and
                   may include (Type of message content e.g. Appointment reminders,
                   service or order information, promotional messages, etc.) Message
                   and data rates may apply. Reply STOP at any time to end or
                   unsubscribe. For assistance, reply HELP or contact support at
-                  (888) 123-4567
+                  +1 (917) 544-4218
                 </p>
 
                 <div className="space-y-2">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       className="w-4 h-4 mr-3 rounded border-stone-300 text-[#EFBF04] focus:ring-[#EFBF04] cursor-pointer"
                     />
                     Yes, I agree to receive text messages from Origen Restaurant Consulting sent
-                    from (888) 123-4567
+                    from +1 (917) 544-4218
                   </label>
 
                   <label className="flex items-center text-sm text-stone-700 cursor-pointer">
