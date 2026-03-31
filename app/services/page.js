@@ -41,7 +41,7 @@ export default function ServicesPage() {
   return (
     <section className="relative min-h-screen py-8 px-4 sm:px-6 overflow-hidden">
       <Image
-        src="/assets/services.PNG"
+        src="/assets/services.png"
         alt="Services background"
         fill
         className="object-cover object-center"
