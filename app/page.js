@@ -70,13 +70,13 @@ export default function Home() {
       {/* Message from Jennypher – light section (like "I'm Maya" block) */}
       <section className="bg-stone-50 py-16 px-6">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          <Image
+          {/* <Image
             src="/assets/jen.jpg"
             alt="Jennypher - Founder"
             width={220}
             height={220}
             className="rounded-full mb-6 object-cover ring-2 ring-amber-300 shadow-lg"
-          />
+          /> */}
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-[#EFBF04]">
             {t.about.messageHeading}
           </h2>

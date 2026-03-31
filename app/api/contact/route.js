@@ -51,7 +51,7 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: fromEmail,
-      to: "jennypherurena@gmail.com",
+      to: "jennypher@origen-consulting.com",
       replyTo: email,
       subject: `New Contact Form Submission - ${name}`,
       html: `

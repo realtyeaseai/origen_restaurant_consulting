@@ -54,10 +54,10 @@ export default function Header() {
           className="flex items-center gap-2 shrink-0 overflow-hidden min-w-0"
         >
           <Image
-            src="/assets/origen1.png"
+            src="/assets/origen2.png"
             alt="Origen Restaurant Consulting logo"
-            width={200}
-            height={36}
+            width={140}
+            height={24}
             className="object-cover object-top rounded-xl"
           />
           {/* <span className="hidden lg:inline text-xl font-semibold text-stone-600 truncate uppercase tracking-wide" title={t.siteName}>
