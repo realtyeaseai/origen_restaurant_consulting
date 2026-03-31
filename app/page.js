@@ -75,7 +75,7 @@ export default function Home() {
             alt="Jennypher - Founder"
             width={220}
             height={220}
-            className="rounded-full mb-6 object-cover ring-2 ring-stone-300 shadow-lg"
+            className="rounded-full mb-6 object-cover ring-2 ring-amber-300 shadow-lg"
           />
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-[#EFBF04]">
             {t.about.messageHeading}
