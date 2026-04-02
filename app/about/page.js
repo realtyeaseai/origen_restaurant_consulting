@@ -40,9 +40,10 @@ export default function AboutPage() {
           height={224}
           className="mb-6 w-44 h-56 object-cover object-top rounded-xl ring-2 ring-amber-200 shadow-lg"
         />
-        <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-[#EFBF04]">
-          {t.about.founderHeading} – {t.about.founderName}
+        <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-amber-500">
+          {t.about.founderName}
         </h3>
+        <p className="text-lg text-amber-500 mb-3">{t.about.founderHeading}</p>
         <p className="mb-4 text-stone-700 leading-relaxed max-w-lg mx-auto text-left">
           {t.about.founderBio}
         </p>
