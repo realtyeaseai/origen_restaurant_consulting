@@ -105,6 +105,17 @@ export default function AnimatedServices({ services }) {
                         className="object-cover object-[50%_20%]"
                         sizes="(max-width: 639px) 100vw, (max-width: 1024px) 100vw, 768px"
                       />
+                      {item.badgeImage && (
+                        <div className="absolute top-2 left-2 z-10 w-20 h-10 sm:w-56 sm:h-24 rounded-2xl overflow-hidden bg-white">
+                          <Image
+                            src={item.badgeImage}
+                            alt="Service badge"
+                            fill
+                            className="object-contain"
+                            sizes="80px"
+                          />
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
                     </>
                   ) : (
