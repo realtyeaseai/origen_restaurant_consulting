@@ -21,14 +21,14 @@ export default function ServicesPage() {
         title: t.services.audit.title,
         description: t.services.audit.description,
         designation: t.services.badge.oneTime,
-        image: "/assets/services/Health_Safety_Audit1.png",
+        image: "/assets/services/Health_Safety_Audit.png",
         badgeImage: "/assets/services/grades.png",
       },
       {
         title: t.services.improvement.title,
         description: t.services.improvement.description,
         designation: t.services.badge.annual,
-        image: "/assets/services/Health_Safety_Improvement_Program1.png",
+        image: "/assets/services/Health_Safety_Improvement_Program.png",
         badgeImage: "/assets/services/grades.png",
       },
       {

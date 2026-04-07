@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <section className="flex flex-col md:flex-row min-h-screen">
       {/* Left: About Origen – theme-aligned dark panel */}
-      <div className="flex-1 min-h-[50vh] md:min-h-0 bg-stone-700 text-white p-8 md:p-10 flex flex-col items-center justify-center text-center">
+      <div className="flex-1 min-h-[50vh] md:min-h-0 bg-black text-white p-8 md:p-10 flex flex-col items-center justify-center text-center">
         {/* <Image
           src="/assets/origen1.png"
           alt="Origen"
