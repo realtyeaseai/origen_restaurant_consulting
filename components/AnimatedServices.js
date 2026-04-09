@@ -157,7 +157,7 @@ export default function AnimatedServices({ services }) {
             type="button"
             onClick={goPrev}
             aria-label={ARIA.left}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 rounded-full border border-stone-400 bg-white/90 backdrop-blur p-2 shadow-sm hover:border-stone-600 hover:shadow-md transition"
+            className="absolute left-2 top-[140px] sm:top-1/2 sm:-translate-y-1/2 z-10 rounded-full border border-stone-400 bg-white/90 backdrop-blur p-2 shadow-sm hover:border-stone-600 hover:shadow-md transition"
           >
             <svg
               width="22"
@@ -177,7 +177,7 @@ export default function AnimatedServices({ services }) {
             type="button"
             onClick={goNext}
             aria-label={ARIA.right}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 rounded-full border border-stone-400 bg-white/90 backdrop-blur p-2 shadow-sm hover:border-stone-600 hover:shadow-md transition"
+            className="absolute right-2 top-[140px] sm:top-1/2 sm:-translate-y-1/2 z-10 rounded-full border border-stone-400 bg-white/90 backdrop-blur p-2 shadow-sm hover:border-stone-600 hover:shadow-md transition"
           >
             <svg
               width="22"
